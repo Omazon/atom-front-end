@@ -1,0 +1,23 @@
+<form class="center" (ngSubmit)="submit()" [formGroup]="form">
+  <mat-form-field appearance="outline" class="mb-5">
+    <mat-label>Email</mat-label>
+    <input type="email"
+           matInput
+           placeholder="Write your email"
+           formControlName="email"
+    >
+    <mat-error *ngIf="(form.get('email')?.hasError('email') && form.get('email')?.touched)">Invalid email</mat-error>
+  </mat-form-field>
+  <button mat-flat-button>Submit</button>
+</form>
+
+<ng-template #createUserDialog>
+  <h2 mat-dialog-title>¿Quieres crear este usuario?</h2>
+  <mat-dialog-content>
+    {{form.get('email')?.value}}
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button mat-button (click)="createUser(form.get('email')?.value)" mat-dialog-close>Crear</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</ng-template>

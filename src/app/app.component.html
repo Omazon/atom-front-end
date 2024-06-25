@@ -1,0 +1,8 @@
+<mat-toolbar *ngIf="authService.isLoggedIn" class="!mb-5">
+  <mat-toolbar-row>
+    <span>Todo App</span>
+    <span class="example-spacer"></span>
+    <button (click)="singOut()" mat-flat-button>Cerrar sesión</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet />
