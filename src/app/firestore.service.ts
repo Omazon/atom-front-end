@@ -8,7 +8,7 @@ import {AuthService} from "./auth.service";
 })
 export class FirestoreService {
 formattedDate: string;
-apiURL = 'http://localhost:3000/tasks';
+apiURL = 'https://atom-backend-jj50.onrender.com';
   constructor(
     private afAuth: AngularFireAuth,
     private http: HttpClient,
